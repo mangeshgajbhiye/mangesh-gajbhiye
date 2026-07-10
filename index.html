@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Platform DevOps Engineer in Pune">
+    <meta name="author" content="Mangesh Gajbhiye">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mangesh Gajbhiye - Platform DevOps Engineer">
+    <meta property="og:description"
+        content="Platform DevOps Engineer in Pune building secure cloud platforms, Kubernetes infrastructure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/mangeshgajbhiye/mangesh-gajbhiye.github.io">
+    <meta property="og:image" content="https://github.com/mangeshgajbhiye.png"> 
+    <meta property="og:image:alt" content="Profile image of Platform DevOps Engineer Mangesh Gajbhiye">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://github.com/mangeshgajbhiye/mangesh-gajbhiye.github.io">
+
+
+    <title>Mangesh Gajbhiye | Platform DevOps Engineer | Kubernetes | AWS</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+    <!-- Stylesheet -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] },
+      colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' }
+    }
+  }
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{font-family:'DM Sans',sans-serif}
+h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif}
+body{transition:background-color .3s,color .3s}
+
+/* noise overlay */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#FF6B2B;border-radius:99px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* nav underline animation */
+.nl{position:relative}
+.nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .22s cubic-bezier(.4,0,.2,1)}
+.nl:hover::after,.nl.on::after{width:100%}
+.nl.on{font-weight:500}
+
+/* shimmer button */
+.shimmer{position:relative;overflow:hidden}
+.shimmer::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1)}
+.shimmer:hover::after{left:160%}
+
+/* photo frames */
+.pf{overflow:hidden;background:#d4d4d8}
+.pf img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* card hover */
+.card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s}
+.card-h:hover{transform:translateY(-4px)}
+
+/* skill tag */
+/*.stag{transition:border-color .18s}*/
+/* Skill Tags */
+.stag{
+    display:inline-flex;
+    align-items:center;
+    padding:8px 16px;
+    border-radius:9999px;
+    background:#f4f4f5;
+    border:1px solid #e4e4e7;
+    color:#27272a;
+    font-size:.875rem;
+    font-weight:500;
+    transition:all .25s cubic-bezier(.4,0,.2,1);
+}
+
+.dark .stag{
+    background:#27272a;
+    border-color:#3f3f46;
+    color:#fafafa;
+}
+
+.stag:hover{
+    background:#FF6B2B;
+    border-color:#FF6B2B;
+    color:#fff;
+    transform:translateY(-2px);
+}
+/* ==========================================
+   EXPERIENCE TIMELINE
+========================================== */
+
+.timeline-dot{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(255,107,43,.45);
+
+    }
+
+    70%{
+
+        box-shadow:0 0 0 14px rgba(255,107,43,0);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(255,107,43,0);
+
+    }
+
+}
+
+.exp-card{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s,
+
+        border-color .35s;
+
+}
+
+.exp-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#FF6B2B;
+
+    box-shadow:0 25px 60px rgba(255,107,43,.15);
+
+}
+/* Experience technology icons */
+
+.tech-icon{
+
+    width:56px;
+    height:56px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#27272a;
+
+    transition:
+    transform .3s,
+    background-color .3s,
+    box-shadow .3s;
+
+}
+
+
+.tech-icon:hover{
+
+    transform:translateY(-5px);
+
+    background:#FF6B2B20;
+
+    box-shadow:
+    0 10px 30px rgba(255,107,43,.20);
+
+}
+
+/* ================= PROJECT LOGOS ================= */
+
+
+.project-logo{
+
+width:42px;
+height:42px;
+
+padding:8px;
+
+border-radius:12px;
+
+background:#27272a;
+
+object-fit:contain;
+
+transition:
+transform .3s,
+background-color .3s,
+box-shadow .3s;
+
+}
+
+
+
+.project-logo:hover{
+
+transform:translateY(-5px) scale(1.08);
+
+background:#FF6B2B20;
+
+box-shadow:
+0 12px 30px rgba(255,107,43,.25);
+
+}
+/* ==========================================
+   PREMIUM HERO BUTTONS
+========================================== */
+
+.hero-btn-primary{
+
+display:inline-flex;
+align-items:center;
+gap:12px;
+
+padding:15px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+background:#FF6B2B;
+
+color:white;
+
+transition:.35s;
+
+box-shadow:
+0 12px 30px rgba(255,107,43,.30);
+
+}
+
+
+.hero-btn-primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 40px rgba(255,107,43,.45);
+
+background:#ff7b43;
+
+}
+
+
+
+.hero-btn-secondary{
+
+display:inline-flex;
+align-items:center;
+gap:12px;
+
+padding:15px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+border:1px solid rgb(212 212 216);
+
+background:white;
+
+color:#18181b;
+
+transition:.35s;
+
+}
+
+
+.dark .hero-btn-secondary{
+
+background:#18181b;
+
+color:white;
+
+border-color:#3f3f46;
+
+}
+
+
+
+.hero-btn-secondary:hover{
+
+transform:translateY(-4px);
+
+border-color:#FF6B2B;
+
+color:#FF6B2B;
+
+box-shadow:
+0 15px 35px rgba(255,107,43,.15);
+
+}
+
+[x-cloak]{display:none!important}
+</style>
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+
+<!-- ═══ NAV ═══ -->
+<header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+  :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center" aria-label="Main navigation">
+
+    <!-- <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
+      <span class="text-zinc-900 dark:text-white">eli</span><span class="text-accent">ott</span>
+    </a> -->
+     <!-- <a href="#hero" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm":class="s==='hero' ? 'on !text-zinc-900 dark:!text-white' : ''">Home</a> -->
+     <a href="#hero"
+   class="nl text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors relative z-10">
+    Home
+</a>
+    <ul class="hidden md:flex items-center gap-8 text-sm mx-auto" role="list">
+      <li><a href="#about" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
+      <li><a href="#education"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Education</a></li>
+      <li><a href="#skill"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
+      <li><a href="#experience"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
+      <li><a href="#projects" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Project</a></li>
+      <li><a href="#cert"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Certification</a></li>
+      <li><a href="#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <!-- dark toggle -->
+      <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
+        <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg x-show="dark"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+      </button>
+      <!-- hire me --> 
+      <!-- <a href="#contact" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+        Hire me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a> -->
+      <!-- hamburger -->
+      <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
+        <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg x-show="mm"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+<main>
+    <!-- ═══ HERO ═══ -->
+<!-- <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden"> -->
+ <section
+id="hero"
+class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+  <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <!-- <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full"> -->
+   <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 lg:py-20 w-full">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+      <div>
+        <!-- <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Hello!</p> -->
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full 
+bg-green-500/10 text-green-500 text-sm font-medium mb-6">
+
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+
+Available for Platform Engineering Opportunities
+
+</div>
+        <h1 class="reveal d1 font-display font-bold  text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
+        I'm <span class="text-accent">Mangesh Gajbhiye</span>
+        <br>
+        <span class="text-zinc-700 dark:text-zinc-300">
+Platform DevOps Engineer
+</span>
+        </h1>
+        <!-- <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
+          Open to <strong class="font-medium text-zinc-700 dark:text-zinc-300">Platform DevOps Engineer &amp; Cloud Engineer roles,</strong>.  as well as consulting opportunities focused on multi-cloud, AI, and security-first DevOps.
+        </p> -->
+        <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 
+font-light leading-relaxed max-w-xl mb-8">
+
+I design and automate secure cloud platforms using 
+<strong class="text-zinc-700 dark:text-zinc-300">
+AWS, Kubernetes, Terraform, CI/CD and DevSecOps practices.
+</strong>
+
+Currently exploring AI-driven automation,
+GenAI workflows and intelligent cloud operations.
+
+</p>
+        <div class="reveal d3 flex flex-wrap gap-5">
+
+    <!-- Resume Button -->
+
+    <a href="resume.pdf"
+       target="_blank"
+       class="hero-btn-primary group">
+
+        <span>Download Resume</span>
+
+        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/>
+
+        </svg>
+
+    </a>
+
+    <!-- Projects Button -->
+
+    <a href="#projects"
+       class="hero-btn-secondary group">
+
+        <span>View Projects</span>
+
+        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"/>
+
+        </svg>
+
+    </a>
+
+</div>
+        
+        <!-- <div class="reveal d4 flex gap-8 mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-900"> -->
+        
+      </div>
+
+      <div class="reveal d2 flex justify-center md:justify-end">
+        <!-- <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96"> -->
+             <div class="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+          <div class="pf w-full h-full rounded-3xl">
+            <img src="photo.jpg" alt="Mangesh Gajbhiye — Platform DevOps Engineer" loading="eager">
+          </div>
+          <!-- <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">Platform DevOps Engineer</div> -->
+          <div class="absolute -bottom-5 -left-5 
+bg-zinc-900 dark:bg-white 
+text-white dark:text-zinc-900
+px-5 py-3 rounded-2xl shadow-xl">
+
+
+<p class="text-sm font-bold">
+Cloud Platform Engineer
+<br>
+AI Automation
+</p>
+
+
+<p class="text-xs opacity-70">
+AWS • Kubernetes • Terraform
+</p>
+
+
+</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+      About me
+    </p>
+
+    <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">
+      Engineering Cloud Platforms with Security, Automation<br>
+      and AI
+    </h2>
+
+    <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-6 my-10">
+
+      <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center">
+        <h3 class="text-3xl font-bold text-accent">8+</h3>
+        <p class="text-sm text-zinc-500 mt-2">Years Experience</p>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center">
+        <h3 class="text-3xl font-bold text-accent">AWS</h3>
+        <p class="text-sm text-zinc-500 mt-2">Cloud Platform</p>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center">
+        <h3 class="text-3xl font-bold text-accent">CKA</h3>
+        <p class="text-sm text-zinc-500 mt-2">Certified</p>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center">
+        <h3 class="text-3xl font-bold text-accent">99.9%</h3>
+        <p class="text-sm text-zinc-500 mt-2">Platform Reliability</p>
+      </div>
+
+    </div>
+
+    <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+      I'm a Platform DevOps Engineer with 8+ years of experience designing, automating, and operating secure cloud infrastructure for enterprise platforms. My work focuses on Kubernetes, AWS, Infrastructure as Code, CI/CD, DevSecOps, and platform reliability, enabling engineering teams to deliver software faster while maintaining security and operational excellence.
+    </p>
+
+    <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
+      My current focus is the evolution of DevOps with Artificial Intelligence—building intelligent automation workflows using Generative AI, RAG architectures, AI agents, and automated cloud operations.
+      <br><br>
+      I enjoy solving complex infrastructure challenges and building reliable platforms that help engineering teams deliver faster and safer.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3">
+
+      <span class="stag">AWS</span>
+      <span class="stag">Kubernetes</span>
+      <span class="stag">Terraform</span>
+      <span class="stag">Docker</span>
+      <span class="stag">Jenkins</span>
+      <span class="stag">Python</span>
+      <span class="stag">DevSecOps</span>
+      <span class="stag">AI Automation</span>
+
+    </div>
+
+  </div>
+</section>
+<!-- Education Section -->
+<section id="education" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-medium text-accent tracking-[0.25em] uppercase mb-3">
+        Education
+      </p>
+
+      <h2 class="font-display font-bold text-4xl md:text-5xl">
+        Academic Journey
+      </h2>
+
+      <p class="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        My academic foundation in Information Technology sparked my passion for
+        cloud computing, automation, and platform engineering.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative max-w-4xl mx-auto">
+
+      <!-- Vertical Line -->
+      <div class="absolute left-5 top-0 h-full w-0.5 bg-zinc-200 dark:bg-zinc-700"></div>
+
+      <!-- Timeline Item -->
+      <div class="relative flex gap-8 reveal">
+
+        <!-- Timeline Dot -->
+        <div
+          class="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent shadow-lg shadow-accent/30">
+
+          <!-- Graduation Cap Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="w-5 h-5 text-white"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l8-4-8-4-8 4 8 4zm0 0v6m-6-3.5V10m12 6.5V10"/>
+          </svg>
+
+        </div>
+
+        <!-- Card -->
+        <div
+          class="flex-1 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 shadow-sm hover:border-accent hover:shadow-xl hover:shadow-accent/10 transition-all duration-300">
+
+          <!-- Year -->
+          <span
+            class="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
+            Graduated • 2017
+          </span>
+
+          <!-- Degree -->
+          <h3 class="mt-4 text-2xl font-display font-bold text-zinc-900 dark:text-white">
+            Bachelor of Engineering (B.E.)
+          </h3>
+
+          <!-- Branch -->
+          <p class="mt-2 text-lg font-medium text-accent">
+            Information Technology
+          </p>
+
+          <!-- University -->
+          <p class="mt-5 text-lg font-semibold text-zinc-800 dark:text-zinc-200">
+            Rashtrasant Tukadoji Maharaj Nagpur University (RTMNU)
+          </p>
+
+          <!-- Location -->
+          <div
+            class="mt-3 flex flex-wrap items-center gap-5 text-sm text-zinc-500 dark:text-zinc-400">
+
+            <div class="flex items-center gap-2">
+              📍
+              <span>Nagpur, Maharashtra</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              🎓
+              <span>Information Technology</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECHNICAL SKILLS ═══ -->
+<section id="skill" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-medium text-accent tracking-[0.25em] uppercase mb-3">
+        Technical Skills
+      </p>
+
+      <h2 class="font-display font-bold text-4xl md:text-5xl">
+        Technologies I Work With
+      </h2>
+
+      <p class="mt-4 max-w-2xl mx-auto text-zinc-600 dark:text-zinc-400">
+        Designing, automating, and securing cloud-native platforms using modern
+        DevOps, Platform Engineering, and AI technologies.
+      </p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <!-- Cloud -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            ☁️
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/microsoftazure/0078D4"
+        alt="Microsoft Azure"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Cloud Platforms
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Microsoft Azure</span>
+          <span class="stag">AWS</span>
+          <span class="stag">Google Cloud</span>
+        </div>
+      </article>
+
+      <!-- Containers -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+      <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10"> 
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            🐳
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/docker/2496ED"
+        alt="Docker"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Containers
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Docker</span>
+          <span class="stag">Kubernetes</span>
+          <span class="stag">Helm</span>
+          <span class="stag">OpenShift</span>
+        </div>
+      </article>
+
+      <!-- IaC -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            ⚙️
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/terraform/7B42BC"
+        alt="Terraform"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Infrastructure as Code
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Terraform</span>
+          <span class="stag">Bicep</span>
+          <span class="stag">ARM Templates</span>
+          <span class="stag">Ansible</span>
+        </div>
+      </article>
+
+      <!-- CI/CD -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            🚀
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/githubactions/2088FF"
+        alt="GitHub Actions"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            CI/CD & DevOps
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Azure DevOps</span>
+          <span class="stag">GitHub Actions</span>
+          <span class="stag">Jenkins</span>
+          <span class="stag">Argo CD</span>
+        </div>
+      </article>
+
+      <!-- Monitoring -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            📊
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/grafana/F46800"
+        alt="Grafana"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Monitoring & Security
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Grafana</span>
+          <span class="stag">Prometheus</span>
+          <span class="stag">Azure Monitor</span>
+          <span class="stag">SonarQube</span>
+          <span class="stag">Trivy</span>
+        </div>
+      </article>
+
+      <!-- Programming -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            💻
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/python/3776AB"
+        alt="Python"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Programming & Automation
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Python</span>
+          <span class="stag">PowerShell</span>
+          <span class="stag">Bash</span>
+          <span class="stag">YAML</span>
+          <span class="stag">Git</span>
+        </div>
+      </article>
+
+      <!-- Operating Systems -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            🖥️
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/linux/FCC624"
+        alt="Linux"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Operating Systems
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">Linux</span>
+          <span class="stag">Windows Server</span>
+        </div>
+      </article>
+
+      <!-- Databases -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            🗄️
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/postgresql/4169E1"
+        alt="PostgreSQL"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            Databases
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">SQL Server</span>
+          <span class="stag">PostgreSQL</span>
+          <span class="stag">MySQL</span>
+        </div>
+      </article>
+
+      <!-- AI -->
+      <!-- <article class="group card-h rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8"> -->
+        <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+        <div class="flex items-center gap-4 mb-6">
+          <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent/10 text-2xl">
+            🤖
+          </div> -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img
+        src="https://cdn.simpleicons.org/openai/FFFFFF"
+        alt="OpenAI"
+        class="w-full h-full object-contain">
+</div>
+          <h3 class="font-display text-xl font-bold">
+            AI & Automation
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="stag">GitHub Copilot</span>
+          <span class="stag">Azure AI</span>
+          <span class="stag">OpenAI APIs</span>
+          <span class="stag">AI Agents</span>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+ <!-- ═════════ EXPERIENCE ═════════ -->
+<section id="experience" class="py-24">
+
+<div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-20 reveal">
+
+        <p class="text-xs font-medium text-accent tracking-[0.25em] uppercase mb-3">
+            Experience
+        </p>
+
+        <h2 class="font-display font-bold text-4xl md:text-5xl">
+            Professional Experience
+        </h2>
+
+        <p class="mt-4 max-w-3xl mx-auto text-zinc-600 dark:text-zinc-400">
+            8+ years of experience designing, automating and operating
+            enterprise cloud platforms specializing in Platform Engineering,
+            DevOps, Kubernetes, Cloud Infrastructure, Infrastructure as Code,
+            Automation and DevSecOps.
+        </p>
+
+    </div>
+
+    <!-- Timeline -->
+
+    <div class="relative">
+
+        <!-- Vertical Line -->
+
+        <div class="hidden lg:block absolute left-6 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-zinc-800"></div>
+
+        <!-- Experience Container -->
+
+        <div class="space-y-16">
+
+            <!-- Global Payments -->
+
+            <div class="relative reveal">
+
+                <!-- Timeline Dot -->
+
+                <div class="hidden timeline-dot lg:flex absolute left-0 top-10 w-12 h-12 rounded-full bg-accent items-center justify-center shadow-lg shadow-accent/30 border-4 border-white dark:border-zinc-950">
+
+                    <svg class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M5 13l4 4L19 7"/>
+
+                    </svg>
+
+                </div>
+
+                <!-- Card Placeholder -->
+
+                <div class="lg:ml-24">
+
+                    <!-- Global Payments Card goes here -->
+                     <article class="exp-card group rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 md:p-10">
+
+    <!-- ================= Header ================= -->
+
+    <div class="flex flex-col lg:flex-row lg:justify-between gap-8">
+
+        <div class="flex gap-5">
+
+            <!-- Company Logo -->
+
+            <div class="w-20 h-20 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center p-4 shrink-0">
+
+                <!-- Replace with your local logo later -->
+                <img
+                    src="https://cdn.simpleicons.org/visa/1A1F71"
+                    alt="Global Payments"
+                    class="w-full h-full object-contain">
+
+            </div>
+
+            <div>
+
+                <p class="text-accent font-semibold tracking-wide uppercase text-sm">
+                    Global Payments Inc.
+                </p>
+
+                <h3 class="font-display text-3xl font-bold mt-1">
+                    Platform DevOps Engineer
+                </h3>
+
+                <p class="mt-3 text-zinc-500 dark:text-zinc-400">
+                    Enterprise Payment Platform Engineering
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Status -->
+
+        <div class="flex flex-wrap gap-3 items-start">
+
+            <span class="px-4 py-2 rounded-full bg-green-500/10 text-green-500 font-semibold text-sm">
+
+                🟢 Current
+
+            </span>
+
+            <span class="px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-sm">
+
+                Jun 2023 – Present
+
+            </span>
+
+            <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+
+                3+ Years
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- ================= Divider ================= -->
+
+    <div class="h-px bg-zinc-200 dark:bg-zinc-800 my-8"></div>
+
+    <!-- ================= Product ================= -->
+
+    <div class="grid lg:grid-cols-2 gap-10">
+
+        <div>
+
+            <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+                Product
+
+            </p>
+
+            <h4 class="font-display text-2xl font-bold">
+
+                Portico Payment Gateway
+
+            </h4>
+
+            <p class="mt-5 leading-8 text-zinc-600 dark:text-zinc-400">
+
+                Enterprise cloud-native payment gateway supporting
+                secure, high-volume card transaction processing with
+                encryption, tokenization, Kubernetes orchestration,
+                cloud automation, and highly available infrastructure.
+
+            </p>
+
+        </div>
+
+        <!-- Employment -->
+
+        <div>
+
+            <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+                Employment Partners
+
+            </p>
+
+            <div class="flex flex-wrap gap-3">
+
+                <span class="stag">
+
+                    TSYS Card Tech Services
+
+                </span>
+
+                <span class="stag">
+
+                    Webarial Pvt. Ltd.
+
+                </span>
+
+            </div>
+
+            <div class="mt-8">
+
+                <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+                    Platform Focus
+
+                </p>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="stag">
+                        Platform Engineering
+                    </span>
+
+                    <span class="stag">
+                        Cloud Infrastructure
+                    </span>
+
+                    <span class="stag">
+                        DevSecOps
+                    </span>
+
+                    <span class="stag">
+                        Kubernetes
+                    </span>
+
+                    <span class="stag">
+                        CI/CD
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ================= Technology Stack ================= -->
+
+<div class="mt-10">
+
+    <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-5">
+        Technology Stack
+    </p>
+
+
+    <div class="flex flex-wrap gap-5">
+
+
+        <!-- AWS -->
+
+        <div class="tech-icon group/icon"
+             title="Amazon Web Services">
+
+            <img
+            src="https://cdn.simpleicons.org/amazonwebservices/FF9900"
+            alt="AWS"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Kubernetes -->
+
+        <div class="tech-icon group/icon"
+             title="Kubernetes">
+
+            <img
+            src="https://cdn.simpleicons.org/kubernetes/326CE5"
+            alt="Kubernetes"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Docker -->
+
+        <div class="tech-icon group/icon"
+             title="Docker">
+
+            <img
+            src="https://cdn.simpleicons.org/docker/2496ED"
+            alt="Docker"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Terraform -->
+
+        <div class="tech-icon group/icon"
+             title="Terraform">
+
+            <img
+            src="https://cdn.simpleicons.org/terraform/7B42BC"
+            alt="Terraform"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Jenkins -->
+
+        <div class="tech-icon group/icon"
+             title="Jenkins">
+
+            <img
+            src="https://cdn.simpleicons.org/jenkins/D24939"
+            alt="Jenkins"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Git -->
+
+        <div class="tech-icon group/icon"
+             title="Git">
+
+            <img
+            src="https://cdn.simpleicons.org/git/F05032"
+            alt="Git"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Grafana -->
+
+        <div class="tech-icon group/icon"
+             title="Grafana">
+
+            <img
+            src="https://cdn.simpleicons.org/grafana/F46800"
+            alt="Grafana"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+        <!-- Prometheus -->
+
+        <div class="tech-icon group/icon"
+             title="Prometheus">
+
+            <img
+            src="https://cdn.simpleicons.org/prometheus/E6522C"
+            alt="Prometheus"
+            class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= Responsibilities ================= -->
+
+
+<div class="mt-12">
+
+
+    <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-5">
+
+        Key Contributions
+
+    </p>
+
+
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Engineered secure and scalable AWS infrastructure using Terraform for enterprise payment workloads.
+            </p>
+
+        </div>
+
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Designed and optimized CI/CD pipelines using Jenkins, Docker, Kubernetes and Git.
+            </p>
+
+        </div>
+
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Managed production Kubernetes environments supporting highly available services.
+            </p>
+
+        </div>
+
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Implemented DevSecOps practices including IAM, encryption and security automation.
+            </p>
+
+        </div>
+
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Built observability solutions using CloudWatch, Prometheus and Grafana.
+            </p>
+
+        </div>
+
+
+
+        <div class="flex gap-3">
+
+            <span class="text-accent text-lg">
+                ✓
+            </span>
+
+            <p class="text-zinc-600 dark:text-zinc-400">
+                Collaborated with engineering and security teams to improve platform reliability.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================= Card Footer ================= -->
+
+
+<div class="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+
+
+    <div class="flex flex-wrap gap-3">
+
+
+        <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+            Cloud Engineering
+        </span>
+
+
+        <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+            Platform Engineering
+        </span>
+
+
+        <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+            Infrastructure Automation
+        </span>
+
+
+        <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+            DevSecOps
+        </span>
+
+
+    </div>
+
+
+</div>
+
+
+</article>
+
+                </div>
+
+            </div>
+
+            <!-- Jio -->
+
+            <div class="relative reveal">
+
+                <div class="hidden timeline-dot lg:flex absolute left-0 top-10 w-12 h-12 rounded-full bg-zinc-800 items-center justify-center border-4 border-white dark:border-zinc-950">
+
+                    <svg class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M5 13l4 4L19 7"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="lg:ml-24">
+
+                    <!-- Jio Card goes here -->
+                    <article class="exp-card group rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 md:p-10">
+
+
+<!-- ================= Header ================= -->
+
+
+<div class="flex flex-col lg:flex-row lg:justify-between gap-8">
+
+
+    <div class="flex gap-5">
+
+
+        <!-- Company Logo -->
+
+        <div class="w-20 h-20 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center p-4 shrink-0">
+
+            <img
+            src="https://cdn.simpleicons.org/jio/0A2885"
+            alt="Jio Platforms"
+            class="w-full h-full object-contain">
+
+        </div>
+
+
+
+        <div>
+
+
+            <p class="text-accent font-semibold tracking-wide uppercase text-sm">
+
+                Jio Platforms Limited
+
+            </p>
+
+
+            <h3 class="font-display text-3xl font-bold mt-1">
+
+                Cloud DevOps Engineer
+
+            </h3>
+
+
+            <p class="mt-3 text-zinc-500 dark:text-zinc-400">
+
+                Enterprise Cloud Platform Engineering
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Duration -->
+
+
+    <div class="flex flex-wrap gap-3 items-start">
+
+
+        <span class="px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-sm">
+
+            Aug 2017 – Jun 2023
+
+        </span>
+
+
+
+        <span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+
+            5 Years 11 Months
+
+        </span>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<!-- Divider -->
+
+
+<div class="h-px bg-zinc-200 dark:bg-zinc-800 my-8"></div>
+
+
+
+
+
+<!-- ================= Project Details ================= -->
+
+
+<div class="grid lg:grid-cols-2 gap-10">
+
+
+    <div>
+
+
+        <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+            Product
+
+        </p>
+
+
+
+        <h4 class="font-display text-2xl font-bold">
+
+            Jio Document Management System
+
+        </h4>
+
+
+
+        <p class="mt-5 leading-8 text-zinc-600 dark:text-zinc-400">
+
+
+            Enterprise document management platform designed for
+            secure storage, access control, workflow automation,
+            audit tracking and highly available cloud operations
+            across business functions.
+
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+    <div>
+
+
+        <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+            Employment Partners
+
+        </p>
+
+
+
+        <div class="flex flex-wrap gap-3">
+
+
+            <span class="stag">
+
+                Swarish Technology
+
+            </span>
+
+
+
+            <span class="stag">
+
+                ASM Enterprise Solution
+
+            </span>
+
+
+
+            <span class="stag">
+
+                Foretell Technologies
+
+            </span>
+
+
+        </div>
+
+
+
+
+        <div class="mt-8">
+
+
+            <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+
+                Engineering Focus
+
+            </p>
+
+
+
+            <div class="flex flex-wrap gap-3">
+
+
+                <span class="stag">
+                    Cloud Infrastructure
+                </span>
+
+
+                <span class="stag">
+                    Automation
+                </span>
+
+
+                <span class="stag">
+                    Kubernetes
+                </span>
+
+
+                <span class="stag">
+                    CI/CD
+                </span>
+
+
+                <span class="stag">
+                    Scripting
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+<!-- ================= Technology Stack ================= -->
+
+
+<div class="mt-10">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-5">
+
+Technology Stack
+
+</p>
+
+
+
+<div class="flex flex-wrap gap-5">
+
+
+
+<div class="tech-icon group/icon" title="AWS">
+
+<img
+src="https://cdn.simpleicons.org/amazonwebservices/FF9900"
+alt="AWS"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Kubernetes">
+
+<img
+src="https://cdn.simpleicons.org/kubernetes/326CE5"
+alt="Kubernetes"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Docker">
+
+<img
+src="https://cdn.simpleicons.org/docker/2496ED"
+alt="Docker"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Terraform">
+
+<img
+src="https://cdn.simpleicons.org/terraform/7B42BC"
+alt="Terraform"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Ansible">
+
+<img
+src="https://cdn.simpleicons.org/ansible/EE0000"
+alt="Ansible"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Python">
+
+<img
+src="https://cdn.simpleicons.org/python/3776AB"
+alt="Python"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Jenkins">
+
+<img
+src="https://cdn.simpleicons.org/jenkins/D24939"
+alt="Jenkins"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+
+
+<div class="tech-icon group/icon" title="Git">
+
+<img
+src="https://cdn.simpleicons.org/git/F05032"
+alt="Git"
+class="w-10 h-10 object-contain transition-transform duration-300 group-hover/icon:scale-110">
+
+</div>
+
+
+</div>
+
+
+</div>
+<div class="mt-12">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-5">
+
+Key Contributions
+
+</p>
+
+
+
+<div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Designed and managed scalable AWS cloud infrastructure using Terraform.
+</p>
+
+</div>
+
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Built automated CI/CD pipelines using Jenkins, Git, Docker and Kubernetes.
+</p>
+
+</div>
+
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Automated infrastructure provisioning and configuration using Ansible.
+</p>
+
+</div>
+
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Developed automation scripts using Shell and Python.
+</p>
+
+</div>
+
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Supported production workloads and improved platform stability.
+</p>
+
+</div>
+
+
+
+
+<div class="flex gap-3">
+
+<span class="text-accent text-lg">✓</span>
+
+<p class="text-zinc-600 dark:text-zinc-400">
+Collaborated with development and QA teams in Agile delivery.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+
+<div class="flex flex-wrap gap-3">
+
+<span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+Cloud Engineering
+</span>
+
+<span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+Automation
+</span>
+
+<span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+Infrastructure as Code
+</span>
+
+<span class="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+Enterprise Platform
+</span>
+
+</div>
+
+</div>
+
+
+</article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ═════════ PROJECTS ═════════ -->
+
+<section id="projects" class="py-24">
+
+
+<div class="max-w-6xl mx-auto px-6">
+
+
+<!-- Heading -->
+
+
+<div class="text-center mb-16 reveal">
+
+
+<p class="text-xs font-medium text-accent tracking-[0.25em] uppercase mb-3">
+
+Featured Projects
+
+</p>
+
+
+
+<h2 class="font-display font-bold text-4xl md:text-5xl">
+
+Engineering Projects
+
+</h2>
+
+
+
+<p class="mt-4 max-w-3xl mx-auto text-zinc-600 dark:text-zinc-400">
+
+Selected enterprise platforms demonstrating cloud architecture,
+automation, Kubernetes operations and DevSecOps practices.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- Cards -->
+
+
+<div class="grid lg:grid-cols-2 gap-8">
+
+
+
+<!-- ================= Portico ================= -->
+
+
+<article class="exp-card group rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8">
+
+
+
+<div class="flex justify-between items-start">
+
+
+<div>
+
+
+<div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-3xl mb-5">
+
+💳
+
+</div>
+
+
+
+<h3 class="font-display text-2xl font-bold">
+
+Portico Payment Gateway
+
+</h3>
+
+
+<p class="text-accent font-medium mt-2">
+
+Enterprise Payment Platform
+
+</p>
+
+
+</div>
+
+
+
+<span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-500">
+
+Production
+
+</span>
+
+
+</div>
+
+
+
+
+
+<p class="mt-6 text-zinc-600 dark:text-zinc-400 leading-7">
+
+
+High-volume payment gateway platform supporting secure
+card transaction processing with cloud-native infrastructure,
+automation and strong security controls.
+
+
+</p>
+
+
+
+
+
+<!-- Impact -->
+
+
+<div class="mt-8">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+
+Business Impact
+
+</p>
+
+
+
+<div class="flex flex-wrap gap-3">
+
+
+<span class="stag">
+
+High Availability
+
+</span>
+
+
+<span class="stag">
+
+Secure Transactions
+
+</span>
+
+
+<span class="stag">
+
+Cloud Native
+
+</span>
+
+
+<span class="stag">
+
+DevSecOps
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Technology -->
+
+
+<div class="mt-8">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+
+Architecture Stack
+
+</p>
+
+
+
+<div class="flex flex-wrap gap-4">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/amazonwebservices/FF9900"
+title="AWS">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/kubernetes/326CE5"
+title="Kubernetes">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/docker/2496ED"
+title="Docker">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/terraform/7B42BC"
+title="Terraform">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/jenkins/D24939"
+title="Jenkins">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</article>
+
+
+
+
+
+<!-- ================= JDMS ================= -->
+
+
+<article class="exp-card group rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8">
+
+
+
+<div>
+
+
+<div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-3xl mb-5">
+
+📄
+
+</div>
+
+
+
+<h3 class="font-display text-2xl font-bold">
+
+Jio Document Management System
+
+</h3>
+
+
+
+<p class="text-accent font-medium mt-2">
+
+Enterprise Cloud Platform
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<p class="mt-6 text-zinc-600 dark:text-zinc-400 leading-7">
+
+
+Enterprise document management platform providing secure
+storage, access management, workflow automation and
+highly available cloud services.
+
+
+</p>
+
+
+
+
+
+
+<div class="mt-8">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+
+Engineering Highlights
+
+</p>
+
+
+
+<ul class="space-y-3 text-zinc-600 dark:text-zinc-400">
+
+
+<li>
+✓ AWS infrastructure automation using Terraform
+</li>
+
+
+<li>
+✓ Kubernetes based application deployment
+</li>
+
+
+<li>
+✓ CI/CD pipeline automation
+</li>
+
+
+<li>
+✓ Configuration management using Ansible
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="mt-8">
+
+
+<p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+
+Technology Stack
+
+</p>
+
+
+
+<div class="flex flex-wrap gap-4">
+
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/amazonwebservices/FF9900"
+title="AWS">
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/kubernetes/326CE5"
+title="Kubernetes">
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/ansible/EE0000"
+title="Ansible">
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/python/3776AB"
+title="Python">
+
+
+<img class="project-logo"
+src="https://cdn.simpleicons.org/git/F05032"
+title="Git">
+
+
+</div>
+
+
+</div>
+
+
+
+</article>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- Certification Section -->
+<section id="cert" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-medium text-accent tracking-[0.25em] uppercase mb-3">
+        Certifications
+      </p>
+
+      <h2 class="font-display font-bold text-4xl md:text-5xl">
+        Professional Certifications
+      </h2>
+
+      <p class="mt-4 max-w-2xl mx-auto text-zinc-600 dark:text-zinc-400">
+        Industry-recognized certifications validating expertise in cloud
+        architecture, Kubernetes administration, and Infrastructure as Code.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <!-- AWS -->
+      <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+
+        <div class="flex justify-between items-start mb-6">
+          <span class="text-4xl">☁️</span>
+           
+
+           <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500">
+    Credential Expired
+</span>
+        </div>
+
+        <h3 class="font-display text-xl font-bold">
+          AWS Certified Solutions Architect – Associate (SAA-C02)
+        </h3>
+
+        <p class="mt-2 text-accent font-medium">
+          Amazon Web Services
+        </p>
+
+        <p class="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+          Credential ID
+        </p>
+
+        <p class="font-mono text-sm mt-1">
+          EYZ1685JFEE4Q5GT
+        </p>
+
+        <a href="https://aws.amazon.com/verification"
+           target="_blank"
+           class="mt-8 inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all">
+          Verify Credential →
+        </a>
+
+      </article>
+
+      <!-- CKA -->
+      <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+
+        <div class="flex justify-between items-start mb-6">
+          <!-- <span class="text-4xl">☸️</span> -->
+           <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors">
+  <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="32" cy="32" r="12"
+            fill="#326CE5"/>
+
+    <path d="M32 8v12M32 44v12M8 32h12M44 32h12
+             M15 15l9 9M40 40l9 9M49 15l-9 9M24 40l-9 9"
+          stroke="#326CE5"
+          stroke-width="4"
+          stroke-linecap="round"/>
+
+    <circle cx="32" cy="32" r="5" fill="white"/>
+
+  </svg>
+</div> -->
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img 
+      src="https://cdn.simpleicons.org/kubernetes/326CE5"
+      alt="Kubernetes logo"
+      class="w-full h-full object-contain">
+</div>
+
+          <!-- <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-500">
+            Active
+          </span> -->
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-500">
+    Active
+</span>
+        </div>
+
+        <h3 class="font-display text-xl font-bold">
+          Certified Kubernetes Administrator
+        </h3>
+
+        <p class="mt-2 text-accent font-medium">
+          The Linux Foundation
+        </p>
+
+        <p class="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+          Credential ID
+        </p>
+
+        <p class="font-mono text-sm mt-1">
+          LF-i5x86nknm7
+        </p>
+
+        <a href="https://training.linuxfoundation.org/certification/verify/"
+           target="_blank"
+           class="mt-8 inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all">
+          Verify Credential →
+        </a>
+
+      </article>
+
+      <!-- Terraform -->
+      <article class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 hover:border-accent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+
+        <div class="flex justify-between items-start mb-6">
+          <!-- <span class="text-4xl">🏗️</span> -->
+        <!-- <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors">
+  <svg class="w-8 h-8" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+
+    <path d="M10 8L28 18V38L10 28V8Z"
+          fill="#7B42BC"/>
+
+    <path d="M32 20L50 30V50L32 40V20Z"
+          fill="#7B42BC"/>
+
+    <path d="M10 32L28 42V58L10 48V32Z"
+          fill="#7B42BC"/>
+
+    <path d="M32 44L50 54L32 64L14 54L32 44Z"
+          fill="#7B42BC"/>
+
+  </svg>
+</div> -->
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-zinc-800 group-hover:bg-accent/20 transition-colors p-3">
+    <img 
+      src="https://cdn.simpleicons.org/terraform/7B42BC"
+      alt="Terraform logo"
+      class="w-full h-full object-contain">
+</div>
+
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500">
+    Credential Expired
+</span>
+        </div>
+
+        <h3 class="font-display text-xl font-bold">
+          HashiCorp Certified Terraform Associate (002)
+        </h3>
+
+        <p class="mt-2 text-accent font-medium">
+          HashiCorp
+        </p>
+
+        <p class="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+          Infrastructure as Code
+        </p>
+
+          <a href="https://www.credly.com/badges/5c546331-48dc-428b-ab48-c6e5d5f31870/public_url"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="mt-8 inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all">
+        Verify on Credly →
+    </a>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+      <!-- <div class="relative z-10 grid md:grid-cols-2 gap-12 items-start"> -->
+        <div class="relative z-10 text-center">
+
+        <div>
+          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Get in touch</p>
+          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">Let's Connect</h2>
+          <!-- <p class="reveal d2 text-zinc-400 leading-relaxed mb-8">I'm open to UI/UX and frontend missions, short or long-term. Landing page, full product redesign, or just a second pair of eyes — let's talk.</p> -->
+          <p class="text-zinc-400 max-w-2xl mx-auto mb-10">
+  Feel free to reach out for DevOps, Platform Engineering, Cloud Architecture opportunities,
+  or just to connect.
+</p>
+           
+          <div class="flex justify-center items-center gap-8 flex-wrap"> 
+          <!-- Phone -->
+<a href="tel:+917666707554"
+   class="group flex flex-col items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+
+  <div class="w-14 h-14 flex items-center justify-center rounded-full bg-zinc-800 group-hover:bg-accent transition-colors">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.57 2.28a2 2 0 01-.54 1.94l-1.1 1.1a16 16 0 006.97 6.97l1.1-1.1a2 2 0 011.94-.54l2.28.57A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C9.716 23 1 14.284 1 4V3a2 2 0 012-2z"/>
+    </svg>
+  </div>
+
+  <span class="text-sm">+91 76667 07554</span>
+</a>
+            <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/mangesh-gajbhiye-285831201/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="group flex flex-col items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-zinc-800 group-hover:bg-accent transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7 19H4V9h3v10zM5.5 7.7A1.75 1.75 0 117.25 5.95 1.75 1.75 0 015.5 7.7zM20 19h-3v-5.2c0-3.1-4-2.9-4 0V19h-3V9h3v1.6c1.4-2.5 7-2.7 7 2.4V19z"/>
+              </svg>
+            </div>
+
+            <span class="text-sm">LinkedIn</span>
+          </a>
+          <!-- Gmail -->
+          <a href="mailto:mangeshbd3@gmail.com"
+             class="group flex flex-col items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-zinc-800 group-hover:bg-accent transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+
+            <span class="text-sm">mangeshbd3@gmail.com</span>
+          </a>
+            <!-- GitHub -->
+          <a href="https://github.com/mangeshgajbhiye"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="group flex flex-col items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-zinc-800 group-hover:bg-accent transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 008.35 22.95c.6.1.82-.26.82-.58v-2.15c-3.2.7-3.88-1.35-3.88-1.35-.52-1.3-1.27-1.64-1.27-1.64-1.04-.71.08-.7.08-.7 1.14.08 1.74 1.17 1.74 1.17 1.02 1.73 2.67 1.23 3.32.94.1-.74.4-1.24.73-1.52-2.56-.29-5.25-1.28-5.25-5.68 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.03 0 0 .97-.31 3.18 1.17a10.96 10.96 0 015.78 0c2.2-1.48 3.17-1.17 3.17-1.17.63 1.57.24 2.74.12 3.03.74.8 1.18 1.82 1.18 3.07 0 4.41-2.7 5.39-5.27 5.67.42.36.79 1.05.79 2.12v3.14c0 .32.22.69.83.57A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
+              </svg>
+            </div>
+
+            <span class="text-sm">GitHub</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+function app() {
+  return {
+    dark: false,
+    mm: false,
+    sc: false,
+    s: 'hero',
+
+    init() {
+      // dark mode
+      this.dark = localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+
+      // scroll
+      window.addEventListener('scroll', () => {
+        this.sc = window.scrollY > 20;
+        this.updateSection();
+      }, { passive: true });
+
+      // reveal
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      // year
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    },
+
+    updateSection() {
+      const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
+      if (atBottom) { this.s = 'contact'; return; }
+      const ids = ['contact','blog','reviews','about','work','services','hero'];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
